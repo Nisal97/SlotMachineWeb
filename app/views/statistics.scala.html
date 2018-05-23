@@ -1,0 +1,30 @@
+@(winAmount : Integer, loseAmount : Integer)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDcmG1IONKJjSXy3tGUpLnEjZHue1mUSAg",
+            authDomain: "slotmachine-c04df.firebaseapp.com",
+            databaseURL: "https://slotmachine-c04df.firebaseio.com",
+            projectId: "slotmachine-c04df",
+            storageBucket: "",
+            messagingSenderId: "234086677985"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+        database.ref("counts").set({ wins: @winAmount, loses: @loseAmount});
+    </script>
+</head>
+<body>
+        <h1><b>Statistics</b></h1>
+
+
+</body>
+</html>
